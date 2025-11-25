@@ -28,9 +28,9 @@ Authorization: Bearer {token}`,
   },
   {
     id: "button",
-    name: "button endpoint",
+    name: "Rodar o workflow de todo o processo.",
     description: "Clique e Adquira os Dados.",
-    endpoint: "/api/v1/hugging-face",
+    endpoint: "https://solutionsmateus-encartes-download.hf.space/api/button",
     method: "GET, POST",
     exampleRequest: `POST /api/v1/novo-endpoint
     Authorization: Bearer {token}`,
