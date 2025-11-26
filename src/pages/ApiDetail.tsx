@@ -21,7 +21,7 @@ export const apis: Api[] = [
     id: "concorrencia",
     name: "Concorrencia API",
     description: "Promoções e Campanhas de todos os supermercados.",
-    endpoint: "/api/v1/concorrencia",
+    endpoint: "https://solutionsmateus-encartes-download.hf.space/api/button",
     method: "GET, POST, PUT, DELETE",
     documentation: "Clique e pegue todos os dados da concorrencia",
     exampleRequest: `GET /api/v1/users/123\nAuthorization: Bearer {token}`,
