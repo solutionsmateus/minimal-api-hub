@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import ApiDetail from "./pages/ApiDetail";
 import NotFound from "./pages/NotFound";
+import Home from "./pages/Home";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/:supermercado/:acaoId" element={<ApiDetail />} />
+          <Route path="/" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
