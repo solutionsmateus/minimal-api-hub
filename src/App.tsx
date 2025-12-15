@@ -17,9 +17,8 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/api/:id" element={<ApiDetail />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
+          <Route path="/:supermercado/:acaoId" element={<ApiDetail />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
