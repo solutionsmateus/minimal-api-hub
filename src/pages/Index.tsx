@@ -8,30 +8,39 @@ const Index = () => {
       {/* Hero Section */}
       <div className="relative overflow-hidden border-b-2 border-border">
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, currentColor 2px, currentColor 4px), repeating-linear-gradient(90deg, transparent, transparent 2px, currentColor 2px, currentColor 4px)',
-            backgroundSize: '40px 40px'
-          }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(0deg, transparent, transparent 2px, currentColor 2px, currentColor 4px), repeating-linear-gradient(90deg, transparent, transparent 2px, currentColor 2px, currentColor 4px)",
+              backgroundSize: "40px 40px",
+            }}
+          />
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
           <div className="flex items-center gap-3 mb-8 animate-slide-in">
             <Terminal className="w-8 h-8" />
-            <span className="text-sm font-mono uppercase tracking-wider">Developer Tools</span>
+            <span className="text-sm font-mono uppercase tracking-wider">
+              Developer Tools
+            </span>
           </div>
-          
+
           <h1 className="text-7xl lg:text-9xl font-display mb-8 animate-slide-up tracking-tight">
             <span className="block">MARKETING</span>
             <span className="block text-gradient">APIs</span>
           </h1>
-          
+
           <p className="text-xl lg:text-2xl text-muted-foreground max-w-2xl mb-12 animate-fade-in leading-relaxed">
             Simples, rápido e automático todos os dados da Concorrência
           </p>
 
-          <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <a 
-              href="#apis" 
+          <div
+            className="flex flex-wrap gap-4 animate-fade-in"
+            style={{ animationDelay: "0.2s" }}
+          >
+            <a
+              href="#apis"
               className="px-8 py-4 bg-foreground text-background font-mono uppercase text-sm tracking-wider hover:bg-foreground/90 transition-all border-2 border-foreground hover:translate-x-1 hover:translate-y-1"
             >
               Buscar API's
@@ -42,18 +51,29 @@ const Index = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 mt-20 pt-12 border-t-2 border-border animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <div
+            className="grid grid-cols-3 gap-8 mt-20 pt-12 border-t-2 border-border animate-fade-in"
+            style={{ animationDelay: "0.4s" }}
+          >
             <div>
               <div className="text-4xl lg:text-5xl font-display mb-2">4</div>
-              <div className="text-sm font-mono text-muted-foreground uppercase tracking-wider">APIs Disponiveis</div>
+              <div className="text-sm font-mono text-muted-foreground uppercase tracking-wider">
+                APIs Disponiveis
+              </div>
             </div>
             <div>
               <div className="text-4xl lg:text-5xl font-display mb-2">100%</div>
-              <div className="text-sm font-mono text-muted-foreground uppercase tracking-wider">Automatizado</div>
+              <div className="text-sm font-mono text-muted-foreground uppercase tracking-wider">
+                Automatizado
+              </div>
             </div>
             <div>
-              <div className="text-4xl lg:text-5xl font-display mb-2">&lt;Segurança</div>
-              <div className="text-sm font-mono text-muted-foreground uppercase tracking-wider">Ambiente Web Seguro</div>
+              <div className="text-4xl lg:text-5xl font-display mb-2">
+                &lt;Segurança
+              </div>
+              <div className="text-sm font-mono text-muted-foreground uppercase tracking-wider">
+                Ambiente Web Seguro
+              </div>
             </div>
           </div>
         </div>
@@ -89,21 +109,33 @@ const Index = () => {
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
             <div>
               <div className="text-3xl font-display mb-2">MateuSolutions</div>
-              <p className="text-sm font-mono text-muted-foreground">Construindo o futuro das automações,</p>
+              <p className="text-sm font-mono text-muted-foreground">
+                Construindo o futuro das automações,
+              </p>
             </div>
-            
+
             <div className="flex gap-6">
-              <a href="#" className="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
+              <a
+                href="#"
+                className="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+              >
                 <Github className="w-5 h-5" />
-                <span className="font-mono text-sm uppercase tracking-wider">GitHub</span>
+                <span className="font-mono text-sm uppercase tracking-wider">
+                  GitHub
+                </span>
               </a>
-              <a href="#" className="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
+              <a
+                href="#"
+                className="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+              >
                 <BookOpen className="w-5 h-5" />
-                <span className="font-mono text-sm uppercase tracking-wider">Docs</span>
+                <span className="font-mono text-sm uppercase tracking-wider">
+                  Docs
+                </span>
               </a>
             </div>
           </div>
-          
+
           <div className="mt-8 pt-8 border-t border-border text-center">
             <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider">
               © 2024 MateuSolutions. Todos os direitos reservados.
