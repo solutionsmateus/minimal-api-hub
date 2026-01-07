@@ -7,13 +7,13 @@ import { toast } from "sonner"; // Assumindo que você usa sonner ou algo simila
 
 // Lista de Supermercados
 const supermercados = [
-  "assai",
-  "atacadao",
-  "cometa",
-  "gbarbosa",
-  "novoatacarejo",
-  "frangolandia",
-  "atakarejo",
+  "Assai",
+  "Atacadão",
+  "Cometa Supermercados",
+  "GBarbosa",
+  "Novo-Atacarejo",
+  "Frangolandia",
+  "Atakarejo",
 ];
 
 // Função que simula o fetch dos dados da API com base na Ação e Supermercado
@@ -22,7 +22,7 @@ interface DynamicApi {
   name: string; // Ex: 'Download Encarte Assai'
   description: string;
   // Endpoint do HF Space: Aqui você ligaria a rota que recebe o supermercado/ação
-  endpoint: string; 
+  endpoint: string;
   method: string;
 }
 
@@ -32,12 +32,11 @@ const getApiDefinition = (
 ): DynamicApi | null => {
   if (!supermercados.includes(supermercado)) return null;
 
-  const baseEndpoint =
-    "https://solutionsmateus-encartes-download.hf.space/api";
+  const baseEndpoint = "https://solutionsmateus-encartes-download.hf.space/api";
 
   let name = "";
   let path = "";
-  
+
   // Lógica para construir o nome e o path do endpoint
   switch (acaoId) {
     case "download":
@@ -76,7 +75,8 @@ const ApiActionDetail = () => {
 
   // Usa useMemo para calcular a definição da API apenas quando os parâmetros mudarem
   const api = useMemo(
-    () => (supermercado && acaoId ? getApiDefinition(supermercado, acaoId) : null),
+    () =>
+      supermercado && acaoId ? getApiDefinition(supermercado, acaoId) : null,
     [supermercado, acaoId]
   );
 
@@ -97,7 +97,8 @@ const ApiActionDetail = () => {
         headers: { "Content-Type": "application/json" },
       });
 
-      if (!res.ok) throw new Error(`Status: ${res.status} | URL: ${api.endpoint}`);
+      if (!res.ok)
+        throw new Error(`Status: ${res.status} | URL: ${api.endpoint}`);
 
       const data = await res.json();
       setResponse(JSON.stringify(data, null, 2));
@@ -155,10 +156,13 @@ const ApiActionDetail = () => {
             {api.description}
           </p>
           <p className="mt-4 text-muted-foreground font-mono text-sm break-all">
-            **Endpoint:** <code className="bg-secondary p-1 text-primary">{api.endpoint}</code>
+            **Endpoint:**{" "}
+            <code className="bg-secondary p-1 text-primary">
+              {api.endpoint}
+            </code>
           </p>
         </div>
-        
+
         {/* O BOTÃO (Foco principal da página) - Estilo Retrô/Arcade */}
         <div className="text-center w-full max-w-md">
           <button

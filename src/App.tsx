@@ -19,8 +19,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/:supermercado/:acaoId" element={<ApiDetail />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/apidetail" element={<ApiDetail />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

@@ -78,6 +78,7 @@ const Index = () => {
               name={api.name}
               description={api.description}
               index={index}
+              endpoint={apis.endpoint}
             />
           ))}
         </div>
