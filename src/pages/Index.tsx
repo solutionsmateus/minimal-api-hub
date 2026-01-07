@@ -1,8 +1,19 @@
 import { ApiCard } from "@/components/ApiCard";
 import { apis } from "@/data/apis";
 import { Terminal, Github, BookOpen } from "lucide-react";
+// 1. Importar o useNavigate para navegação
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  // 2. Inicializar o hook de navegação
+  const navigate = useNavigate();
+
+  // Função para lidar com o clique e redirecionar
+  const handleApiClick = (pagePath: string) => {
+    // Redireciona o usuário para a rota definida no 'pagePath'
+    navigate(pagePath);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -92,12 +103,17 @@ const Index = () => {
 
         <div className="grid gap-6 animate-fade-in">
           {apis.map((api, index) => (
+            // 3. Passando a rota e a função de clique para o ApiCard
             <ApiCard
               key={api.id}
               id={api.id}
               name={api.name}
               description={api.description}
               index={index}
+              // Assumindo que o campo com o caminho de front-end agora é `pagePath`
+              // Se você ainda usa `endpoint`, mude para `endpoint={api.endpoint}`
+              pagePath={api.pagePath}
+              onDetailClick={() => handleApiClick(api.pagePath)}
             />
           ))}
         </div>
