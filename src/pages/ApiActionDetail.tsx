@@ -1,41 +1,48 @@
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Play, Loader2, Terminal, ShoppingBag } from "lucide-react";
 import { useState, useMemo } from "react";
-import { toast } from "sonner"; // Assumindo que você usa sonner ou algo similar
+import { toast } from "sonner";
 
 // --- Definição dos Dados & Mapeamento ---
 
-// Lista de Supermercados
+// Lista de Supermercados (ajustada para minúsculas para corresponder à URL)
+// O useParams captura o valor da URL que está em minúsculas (ex: "atacadao")
 const supermercados = [
-  "Assai",
-  "Atacadão",
-  "Cometa Supermercados",
-  "GBarbosa",
-  "Novo-Atacarejo",
-  "Frangolandia",
-  "Atakarejo",
+  "assai",
+  "atacadao",
+  "cometa",
+  "gbarbosa",
+  "novoatacarejo",
+  "frangolandia",
+  "atakarejo",
 ];
 
 // Função que simula o fetch dos dados da API com base na Ação e Supermercado
 interface DynamicApi {
-  id: string; // Ex: 'assai-download'
-  name: string; // Ex: 'Download Encarte Assai'
+  id: string; // Ex: 'atacadao-download'
+  name: string; // Ex: 'Download Encarte ATACADAO'
   description: string;
-  // Endpoint do HF Space: Aqui você ligaria a rota que recebe o supermercado/ação
   endpoint: string;
   method: string;
 }
 
 const getApiDefinition = (
-  supermercado: string,
+  // Mapeia o parâmetro da URL (string)
+  supermercadoUrl: string,
   acaoId: "download" | "salvar" | "transcrever"
 ): DynamicApi | null => {
+  // Normaliza o nome para corresponder ao padrão interno
+  const supermercado = supermercadoUrl.toLowerCase();
+
+  // Verifica se o supermercado é válido
   if (!supermercados.includes(supermercado)) return null;
 
+  // URL base do Hugging Face Space
   const baseEndpoint = "https://solutionsmateus-encartes-download.hf.space/api";
 
   let name = "";
   let path = "";
+  let displayName = supermercado.toUpperCase(); // Nome para exibir no título
 
   // Lógica para construir o nome e o path do endpoint
   switch (acaoId) {
@@ -57,14 +64,14 @@ const getApiDefinition = (
 
   return {
     id: `${supermercado}-${acaoId}`,
-    name: `${name} (${supermercado.toUpperCase()})`,
-    description: `Executa a função de ${name.toLowerCase()} para o ${supermercado}.`,
+    name: `${name} (${displayName})`,
+    description: `Executa a função de ${name.toLowerCase()} para o ${displayName}.`,
     endpoint: `${baseEndpoint}${path}`,
-    method: "GET", // Mantendo GET simples, mude conforme necessário
+    method: "GET",
   };
 };
 
-// --- Componente ApiActionDetail ---
+// --- Componente ApiActionDetail (Novo Nome) ---
 
 const ApiActionDetail = () => {
   // Pega os parâmetros da URL
@@ -105,8 +112,11 @@ const ApiActionDetail = () => {
       toast.success(`Função ${api.id} executada com sucesso!`);
     } catch (error) {
       console.error(error);
+      // Garante que o erro é um objeto Error para extrair a mensagem
+      const errorMessage =
+        error instanceof Error ? error.message : String(error);
       toast.error("Falha ao executar a função. Verifique o console.");
-      setResponse(`Erro: ${error}`);
+      setResponse(`Erro: ${errorMessage}`);
     } finally {
       setLoading(false);
     }
@@ -119,11 +129,11 @@ const ApiActionDetail = () => {
         <div className="text-center animate-fade-in">
           <h1 className="text-6xl font-display mb-6">Ação Não Encontrada</h1>
           <Link
-            to="/"
+            to="/home" // Volta para a home page de encartes
             className="inline-flex items-center gap-2 px-6 py-3 border-2 border-foreground hover:bg-foreground hover:text-background transition-all font-mono text-sm uppercase tracking-wider"
           >
             <ArrowLeft className="w-4 h-4" />
-            Voltar para a Home
+            Voltar para a Central de Encartes
           </Link>
         </div>
       </div>
@@ -136,7 +146,7 @@ const ApiActionDetail = () => {
       <div className="border-b-2 border-border bg-card p-6">
         <div className="max-w-4xl mx-auto flex items-center gap-4">
           <Link
-            to="/"
+            to="/home" // Volta para a home page de encartes
             className="p-2 border-2 border-transparent hover:border-foreground transition-all rounded-full"
           >
             <ArrowLeft className="w-5 h-5" />
