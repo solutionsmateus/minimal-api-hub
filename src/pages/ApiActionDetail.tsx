@@ -38,7 +38,8 @@ const getApiDefinition = (
   if (!supermercados.includes(supermercado)) return null;
 
   // URL base do Hugging Face Space
-  const baseEndpoint = "https://solutionsmateus-encartes-download.hf.space/api";
+  const baseEndpoint =
+    "https://solutionsmateus-encartes-pdf-all-functions.hf.space/api";
 
   let name = "";
   let path = "";
