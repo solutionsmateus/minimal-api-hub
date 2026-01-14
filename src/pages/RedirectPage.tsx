@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 
+///Çosssss
 // Lista oficial dos supermercados conforme sua estrutura
 const SUPERMERCADOS = [
   { id: "assai", name: "Assaí Atacadista" },
