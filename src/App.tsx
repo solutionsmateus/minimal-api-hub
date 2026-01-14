@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import ApiActionDetail from "./pages/ApiActionDetail";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
+import RedirectPage from "./pages/RedirectPage";
 
 const queryClient = new QueryClient();
 
@@ -22,10 +23,9 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/home" element={<Home />} />{" "}
-          {/* Rota dinâmica que captura o supermercado e a ação */}{" "}
           <Route path="/:supermercado/:acaoId" element={<ApiActionDetail />} />{" "}
-          {/* O NotFound deve ser o último para capturar todas as rotas não mapeadas */}
           <Route path="*" element={<NotFound />} />{" "}
+          <Route path="/redirectpage" element={<RedirectPage />} />{" "}
         </Routes>{" "}
       </BrowserRouter>{" "}
     </TooltipProvider>{" "}

@@ -15,7 +15,7 @@ export const apis: Api[] = [
     id: "concorrencia",
     name: "Concorrencia API",
     description: "Promoções e Campanhas de todos os supermercados.",
-    endpoint: "/apidetail/concorrencia",
+    endpoint: "/redirectpage",
     method: "GET, POST, PUT, DELETE",
     documentation: "Clique e pegue todos os dados da concorrencia",
     exampleRequest: `GET /api/v1/users/123
