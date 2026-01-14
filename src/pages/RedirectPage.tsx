@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  Play,
-  CheckCircle2,
-  XCircle,
-  Loader2,
-  ShoppingCart,
-} from "lucide-react";
+import { Play, CheckCircle2, XCircle, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
 ///Çosssss
@@ -76,9 +70,7 @@ const RedirectPage = () => {
               className="bg-white border-2 border-slate-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="bg-slate-100 p-3 rounded-full">
-                  <ShoppingCart className="w-6 h-6 text-slate-700" />
-                </div>
+                <div className="bg-slate-100 p-3 rounded-full"></div>
                 <h2 className="text-xl font-bold text-slate-800">
                   {supermarket.name}
                 </h2>
