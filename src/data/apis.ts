@@ -1,9 +1,8 @@
-// Page of Server-Less Back-end Requisitions
 export interface Api {
   id: string;
   name: string;
   description: string;
-  endpoint: string;
+  pagePath: string;
   method: string;
   documentation: string;
   exampleRequest: string;
@@ -15,28 +14,20 @@ export const apis: Api[] = [
     id: "concorrencia",
     name: "Concorrencia API",
     description: "Promoções e Campanhas de todos os supermercados.",
-    endpoint: "/redirectpage",
+    pagePath: "/redirectpage", // Aqui deve ser pagePath
     method: "GET, POST, PUT, DELETE",
     documentation: "Clique e pegue todos os dados da concorrencia",
-    exampleRequest: `GET /api/v1/users/123
-Authorization: Bearer {token}`,
-    exampleResponse: `{
-  "status": "success",
-  "message": "Ação realizada com sucesso"
-}`,
+    exampleRequest: `GET /api/v1/users/123...`,
+    exampleResponse: `{...}`,
   },
   {
-    id: "Em Breve terão outros projetos",
+    id: "outros",
     name: "Projetos.",
     description: "Clique e Veja.",
-    endpoint: "#",
+    pagePath: "#", // Aqui também
     method: "GET, POST",
-    exampleRequest: `POST /api/v1/novo-endpoint
-    Authorization: Bearer {token}`,
-    exampleResponse: `{
-  "status": "success",
-  "message": "Ação realizada com sucesso"
-}`,
+    exampleRequest: `...`,
+    exampleResponse: `...`,
     documentation: "",
   },
 ];
