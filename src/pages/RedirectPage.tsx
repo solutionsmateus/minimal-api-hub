@@ -69,7 +69,7 @@ const RedirectPage = () => {
         {/* Título Simples */}
         <div className="border-b-4 border-black pb-2 mb-8">
           <h1 className="text-3xl font-black uppercase tracking-tighter italic">
-            Console_Automação v1.0
+            Encartes - Concorrencia
           </h1>
         </div>
 
@@ -139,7 +139,7 @@ const RedirectPage = () => {
           >
             {logs.length === 0 && (
               <div className="text-zinc-600 italic animate-pulse font-bold">
-                _ Sistema pronto. Aguardando execução...
+                _ Ready, Waiting for execution...
               </div>
             )}
             {logs.map((log, i) => (
