@@ -130,7 +130,7 @@ const ApiActionDetail = () => {
         <div className="text-center animate-fade-in">
           <h1 className="text-6xl font-display mb-6">Ação Não Encontrada</h1>
           <Link
-            to="/home" // Volta para a home page de encartes
+            to="/redirectpage" // Volta para a home page de encartes
             className="inline-flex items-center gap-2 px-6 py-3 border-2 border-foreground hover:bg-foreground hover:text-background transition-all font-mono text-sm uppercase tracking-wider"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -147,7 +147,7 @@ const ApiActionDetail = () => {
       <div className="border-b-2 border-border bg-card p-6">
         <div className="max-w-4xl mx-auto flex items-center gap-4">
           <Link
-            to="/home" // Volta para a home page de encartes
+            to="/redirectpage" // Volta para a home page de encartes
             className="p-2 border-2 border-transparent hover:border-foreground transition-all rounded-full"
           >
             <ArrowLeft className="w-5 h-5" />
